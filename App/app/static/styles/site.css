@@ -1,1 +1,338 @@
 
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family:'Times New Roman';
+}
+nav{
+  background: #036cbd;
+  height: 80px;
+  width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a{
+  font-size: 16px;
+  font-family:'Times New Roman';
+  background: none; 
+  color:#2c3e50;
+}
+
+.fancy-button:hover{
+  background: #1b9bff;  
+  transition: .5s;
+}
+
+a.active{
+  background: #1b9bff;   
+  transition: .5s;
+}
+.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a.active{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+  /*paveikslelio formatas nurodomas*/
+} 
+body, html {
+  height: 70%;
+  margin: 0;
+}
+.backgroundd{
+  background:url(photo6.jpg);
+  height: 50%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+body{
+  font-family: 'Times New Roman';
+  background: rgba(222, 238, 250, 0.89);
+}  
+.color{
+  font-family: 'Times New Roman';
+  background: #197bbd;
+}
+/* Prisijungimo lango stilius */
+.login{
+  background: #fff;
+  padding: 40px;
+  width: 320px;
+  margin: auto;
+  margin-top: 50px;
+  height: 340px;
+  border-style: solid;
+  border-radius: 0.4cm;
+}
+/* Registracijos lango stilius */
+.register{
+  background: #fff;
+  padding: 40px;
+  width: 320px;
+  margin: auto;
+  margin-top: 50px;
+  height: 380px;
+  border-style: solid;
+  border-radius: 0.4cm;
+}
+button[type=submit] {
+  text-align: center;
+  border: none;
+  color: rgb(248, 246, 246);
+  padding: 12px 28px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 0.3cm;
+  background-color: #3498db;
+  box-shadow: 5px 10px 20px rgb(63, 61, 221) inset;
+}
+/* Prideti testa mygtukas */
+button[onclick] {
+  text-align: center;
+  border: none;
+  color:#2c3e50;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: 'Times New Roman';
+  margin: auto;
+  border-radius: 0.3cm;
+  background: none;
+}
+form{
+  width: auto;
+  text-align: center;
+}
+input{
+  width: 240px;
+  text-align: center;
+  background: #ecf0f1;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 10px 0;
+  transition: border .5s;
+}
+input[type =submit]{
+  border: 2px solid transparent;
+  background: #3498db;
+  color: white;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  border-radius: 3px;
+}
+input[type=submit]:hover{
+  background: #2980b9;
+}
+h1{
+  color:rgb(22, 22, 22);
+  font-size: 26px;
+  font-family: 'Times New Roman';
+  text-align: center;      
+}
+h2{
+  color:rgb(34, 34, 34);
+  font-size: 32px;
+  font-family: 'Times New Roman';
+  text-align: center;      
+}
+h3{
+  color:rgb(34, 34, 34);
+  font-size: 24px;
+  font-family: 'Times New Roman';
+  text-align: center;      
+}
+.column {
+  float: left;
+  padding: 18px;
+}
+.column.side {
+  width: 18%;
+}
+.column.middle {
+  width: 64%;
+}
+p{
+  font-family: 'Times New Roman';
+  font-size: 22px; 
+  text-align: justify;
+  text-indent: 5em; 
+  line-height: 1.7
+}
+.test{
+  background: #fff;
+  font-family: 'Times New Roman';
+  padding: 40px;
+  width: 320px;
+  margin: auto;
+  margin-top: 35px;
+  height: 710px;
+  border-style: double;
+  border-radius: 0.3cm;
+}
+.test1{
+  background: #fff;
+  font-family: 'Times New Roman';
+  padding: 40px;
+  width: 320px;
+  margin: auto;
+  margin-top: 50px;
+  height: 320px;
+  border-style: double;
+  border-radius: 0.3cm;
+}
+/* Tvarkome sugeneravimo mygtuka */
+button[type=submit1] {
+  background-color: #3498db;
+  text-align: center;
+  border: none;
+  color: rgb(248, 246, 246);
+  padding: 9px 17px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  font-family: 'Times New Roman';
+  border-radius: 0.3cm;
+  box-shadow: 5px 10px 20px rgb(63, 61, 221) inset;
+}
+/* Scenariju/testu lenteles stilius */
+table {
+  font-family: 'Times New Roman', Times, serif;
+  border-collapse: collapse; /*  separate */
+  background-color: rgb(248, 195, 20);
+  border-radius: 0.3cm;
+  table-layout: auto; 
+  width: 90%;
+} 
+td, th {
+  border: 1px solid #f6f6fa;
+  border-radius: 0.3cm;
+  padding: 8px;
+  text-align: center;
+  width: auto;
+} 
+/* Rezultatu lenteles stilius */
+.reztable {
+  font-family: 'Times New Roman';
+  border-collapse: collapse;
+  width: 100%;
+  margin: 5%; /* Nurdo atstuma nuo krasto */
+  margin-top: 50px;
+  border-radius: 0.3cm;
+  table-layout: fixed; 
+}
+button[type=submit2]{
+  text-align: center;
+  border: none;
+  padding: 11px 17px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  font-family: 'Times New Roman';
+  border-radius: 0.3cm;
+  background-color: #3498db;
+  box-shadow: 5px 10px 20px rgb(63, 61, 221) inset;
+}
+.container1 { 
+  height: auto;
+  width: auto;
+  position: static;
+}
+.center {
+  margin-left: center;
+  position: absolute;
+  top: 20%;
+  left: 8%;
+}
+.center_btn {
+  margin: 0;
+  position: absolute;
+  top: 12%;
+  left: 41.5%; 
+}
+.caption{
+  width: 200px;
+  border-radius: 0.3cm;
+}
+.names{
+  background-color: #3498db;
+  box-shadow: 13px 22px 30px rgb(63, 61, 221) inset;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(31, 30, 30);
+  border-radius: 0.3cm;
+}
