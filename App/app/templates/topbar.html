@@ -1,0 +1,27 @@
+<head>
+    <meta charset="UTF-8">
+    <title> A.J. website </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/site.css') }}"/>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn"> 
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">A.J. žiniatinklis</label>
+    <ul>
+        <li><a class="fancy-button" href={{ url_for("main.home1") }} id="home1">Pradžia</a></li> 
+        <li><a class="fancy-button" href={{ url_for("main.about") }} id="about">Apie</a></li>
+        <li><a class="fancy-button" href={{ url_for("main.testing") }} id="testing">Testavimas</a></li>
+        <li><a class="fancy-button" href={{ url_for("main.results") }} id="results">Rezultatai</a></li>
+        <li><a class="fancy-button" href={{ url_for("main.index") }} id="Logout">Atsijungti</a></li>
+        
+    </ul>
+</nav>
+
+
+
+

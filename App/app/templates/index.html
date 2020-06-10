@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> A. J. website </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/site.css') }}"/> 
+    </head>
+    <body onload="onLoad('index')" class="color">
+        <header>
+            <br>
+            <br>
+            <h1 ><b><big><big>Sveiki atvykę į tinklo paramentrų matavimo puslapį!</big></big></b></h1>
+        </header>
+        <main>
+            <div class="login">
+                <form method="POST" action="/login">
+                    <h1>Prisijungimas</h1>
+                    <br>
+                    <input type="text" name="vardas" required placeholder="Prisijungimo vardas">
+                    <br>
+                    <br>
+                    <input type="password" name="password" required placeholder="Slaptažodis">  <!-- Reaguoja i didziasias ir mazasias reides-->
+                    <br>
+                    <br>
+                    <button type="submit">Prisijungti</button> 
+                    <br>
+                    <br>
+                    <a href="{{ url_for('main.register') }}">Sukurti paskyrą</a>
+                </form>
+            </div>
+        </main>
+    </body>
+</html>

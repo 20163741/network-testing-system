@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> A. J. website </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/site.css') }}"/>
+    </head>
+    <body onload="onLoad('register')" class="color">
+        <div class="register">
+            <form method="POST" action="/login-submit">
+                <h1>Paskyros kūrimas</h1>
+                <br>
+                <input type="text" name="vardas" required placeholder="Prisijungimo vardas">
+                <br>
+                <br>
+                <input type="password" name="password1" required placeholder="Slaptažodis">
+                <br>
+                <br>
+                <input type="password" name="password2" required placeholder="Pakartokite slaptažodį">
+                <br>
+                <br>
+                <button type="submit">Sukurti</button>
+                <br>
+                <br>
+            </form>
+            <a href={{ url_for("main.index") }}>Atgal</a>
+        </div>    
+    </body>
+</html>

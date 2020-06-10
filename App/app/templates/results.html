@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+    <body onload="onLoad('results')">
+        {% include 'topbar.html' %}
+        <main>
+            <div class="reztable"> 
+                <form method="POST" action="/run/<id>/">
+                <table>  
+                    <caption class="cap"><h2>Testavimų rezultatų lentelė</h2></caption>
+                    <tr class="names">
+                        <th class="c11">Scenarijaus ID</th>
+                        <th class="c12">Testo ID</th> 
+                        <th class="c13">Pradžios laikas</th>
+                        <th class="c14">Siuntėjo IP</th>
+                        <th class="c15">Gavėjo IP</th>
+                        <th class="c16">Programa</th>
+                        <th class="c17">Trukmė,s</th>
+                        <th class="c18">Protokolas</th>
+                        <th class="c19">Lygiagrečių srautų skaičius</th>
+                        <th class="c20">Pralaidumas, Mb/s (UDP)</th>
+                        <th class="c21">mss dydis (TCP)</th>
+                        <th class="c22">TOS laukas</th>
+                        <th class="c23">Pralaidumas, Mb/s (TCP)</th>
+                        <th class="c24">Paketų praradimo procentas</th>
+                        <th class="c25">Švytavimas</th> 
+                    </tr>
+                    {% for item in results %}
+                    <tr>
+                        <td class="c11">{{item.scenario_id}}</td>
+                        <td class="c12">{{item.id}}</td>
+                        <td class="c13">{{item.date}}</td> <!-- pakeiciau is datetime-->
+                        <td class="c14">{{item.source}}</td>
+                        <td class="c15">{{item.destination}}</td>
+                        <td class="c16">{{item.program}}</td>
+                        <td class="c17">{{item.duration}}</td>
+                        <td class="c18">{{item.protocol}}</td>
+                        <td class="c19">{{item.num_streams}}</td>
+                        <td class="c20">{{item.throughput}}</td>
+                        <td class="c21">{{item.mss}}</td>
+                        <td class="c22">{{item.tos}}</td>
+                        <td class="c23">{{item.bits_per_second}}</td>
+                        <td class="c24">{{item.lost_percent}}</td>
+                        <td class="c25">{{item.jitter_ms}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>   
+                </form>    
+            </div>
+        </main>        
+    </body>
+</html>

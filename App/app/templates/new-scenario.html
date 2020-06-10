@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html>
+  <body onload="onLoad('new-scenario')"> 
+      {% include 'topbar.html' %}       
+      <main>
+        <div class="test1">
+        <form method="POST" action="/scenario-submit">
+          <h1>Testavimo scenarijų kūrimas</h1>
+          <br>
+          <input type="text" name="scenario_id" id="new-scenario1" placeholder="Scenarijaus id" value="{{ scenario_id }}" disabled required>
+          <br>
+          <br>
+          <button type="submit1">Sugeneruoti ID</button>
+          <br>
+          <br>             
+        </form>  
+        <button onclick="newTest()">Pridėti testą</button>  
+        <br>
+        <br> 
+        <a href={{ url_for("main.testing") }} id="new-scenario2">Peržiūrėti sukurtus testus</a>
+        </div>
+      </main>
+  </body>
+</html>
+
+<script>
+  function newTest(){
+    var id = document.getElementById("new-scenario1").value;
+    var url = "/new-test/" + id;
+    window.location.assign(url);
+  } 
+</script>

@@ -1,1 +1,24 @@
-
+<!DOCTYPE html>
+<html>
+    <body onload="onLoad('about')">
+        {% include 'topbar.html' %}
+            <div class="column side">
+            </div>
+            <div class="column middle">
+                <section> 
+                    <br>
+                    <br>
+                    <h2><big>Aprašymas</big></h2>  
+                    <br>
+                    <br>
+                    <p> Sistema skirta įvertinti nedidelius ir vidutinio dydžio tinklus, sudarytus iš ne daugiau nei 50 interneto įrenginių. Sistemą 
+                        sudaro tinklalapis, pranešimų brokeris, rezultatų servisas, duomenų bazė, ne mažiau nei keturi jutikliai ir matavimų scenarijai. 
+                        Tinklalapyje sukuriamas matavimo scenarijus, kuriame gali būti keli skirtingi testai. Jie persiunčiami į matavimo įrenginius, 
+                        kuriuose atėjus laikui paleidžiami testavimai. Išmatuoti kokybės parametrai iš jutiklių išpublikuojami į SMN/network/TestResults temą. 
+                        Rezultatų servisas klausydamas šios temos pasiima iš Mosquitto brokerio rezultatus. Iš serviso duomenys įrašomi į duomenų bazę, o iš 
+                        tenai rezultatai yra paimami ir atvaizduojami tinklalapyje "Rezultatai" skiltyje. Vertinami tinklo parametrai: pralaidumas, paketų 
+                        praradimas procentais, švytavimas. Kaip tinklo matavimo įrenginiai yra naudojami kompiuteriai su Linux OS. Sąsajos tipas: Ethernet.     </p>
+                </section>
+            </div>
+    </body>
+</html>

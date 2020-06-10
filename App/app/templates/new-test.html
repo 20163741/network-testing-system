@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/jquery.datetimepicker.min.css') }}">
+  </head>
+  <body onload="onLoad('/new-test')">
+        {% include 'topbar.html' %}         
+  <main>
+    <div class="test">
+      <form method="POST" action="/testing-submit">
+        <h1>Testo kūrimas</h1>
+        <input type="text" name="scenario_id" id="new-scenario1" placeholder="Scenarijaus id" value="{{ suniukas }}">
+        <br><br>     
+        <div>
+          <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+          <script src="{{ url_for('static', filename='js/jquery.datetimepicker.full.js') }}"></script>
+            <input name="datetime" id="datetime" placeholder="Pasirinkite pradžios datą ir laiką">
+          <script>
+              $("#datetime").datetimepicker({
+                step: 5
+              });
+          </script>
+        </div>
+          <br>
+            <label for="source" >Pasirinkite siuntėjo ip:</label>
+            <select name="source" id="source" required>  <!-- Reikalingas tik temai suformuoti, toliau jo nesiunciu -->
+              <option value="">.....</option>
+              <option value="10.128.67.38">10.128.67.38 (jutiklis nr.1)</option>
+              <option value="10.128.67.66">10.128.67.66 (jutiklis nr.2)</option>
+              <option value="10.128.67.82">10.128.67.82 (jutiklis nr.3)</option>
+              <option value="10.128.67.83">10.128.67.83 (jutiklis nr.4)</option>
+            </select> 
+            <br>
+            <br>
+            <label for="destination" >Pasirinkite gavėjo ip:</label>
+            <select name="destination" id="destination" required> 
+              <option value="">.....</option>
+              <option value="10.128.67.38">10.128.67.38 (jutiklis nr.1)</option>
+              <option value="10.128.67.66">10.128.67.66 (jutiklis nr.2)</option>
+              <option value="10.128.67.82">10.128.67.82 (jutiklis nr.3)</option>
+              <option value="10.128.67.83">10.128.67.83 (jutiklis nr.4)</option>
+            </select> 
+            <br>
+            <br>
+            <label for="program">Pasirinkite programą:</label>
+            <select name="program" id="program" required>
+              <option value="">.....</option>
+              <option value="iperf3">iperf3</option>
+              <!-- <option value="ping">ping</option>  Veliau bus galima ir ji rinktis -->
+            </select> 
+            <br>
+            <br>
+            <label for="duration">Nurodykite trukmę (s):</label>
+            <select name="duration" id="duration" required>
+              <option value="">.....</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <!-- <option value="60">60</option>
+              <option value="120">120</option>
+              <option value="240">300</option> -->
+            </select> 
+            <br>
+            <br>
+            <label for="protocol">Pasirinkite protokolą:</label>
+            <select name="protocol" id="protocol" required>
+              <option value="">.....</option>
+              <option value="TCP">TCP</option>  <!-- TCP by default protokolas-->
+              <option value="UDP">UDP</option>  
+            </select>
+            <br>
+            <br>
+            <label for="num_streams" >Nurodykite lygiagrečių srautų skaičių:</label>
+            <select name="num_streams" id="num_streams" required>
+              <option value="">.....</option> 
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <!-- <option value="10">10</option> -->
+              <!-- <option value="20">20</option> -->
+            </select>
+            <br>
+            <br>
+            <label for="throughput">Nurodykite UDP pralaidumą (Mb/s):</label> 
+            <select name="throughput" id="throughput">
+            <option value="">.....</option> 
+            <option value="1">1</option>
+            <option value="10">10</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+            <option value="500">500</option>
+            </select>
+            <br>
+            <br>
+            <label for="mss">Pasirinkite TCP mss dydį:</label> 
+            <select name="mss" id="mss">
+              <option value="">.....</option> 
+              <option value="216">216</option> 
+              <option value="472">472</option> 
+              <option value="984">984</option> 
+              <option value="1370">1370</option>
+              <option value="1400">1400</option>
+              <option value="1460">1460</option> 
+            </select> 
+            <br>
+            <br>
+            <label for="tos">Pasirinkite TOS lauko reikšmę:</label>
+            <select name="tos" id="tos">
+              <option value="">.....</option>
+              <option value="0x02">0x02</option>
+              <option value="0x04">0x04</option>
+              <option value="0x08">0x08</option>
+              <option value="0x10">0x10</option> 
+            </select> 
+            <br>
+            <br>
+            <button type="submit">Išsaugoti</button>  
+      </form> 
+            <br>
+            <a href={{ url_for("main.new_scenario") }} id="new-scenario2">Atgal</a>  
+    </div>
+  </main>
+  </body>
+</html>
+
+
+  <script>
+    function newTest(){
+      var id = document.getElementById("new-scenario1").value;
+      var url = "/new-test/" + id;
+      window.location.assign(url);
+    } 
+  </script>
